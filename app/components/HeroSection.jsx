@@ -16,7 +16,7 @@ export const HeroSection = () => {
                     <br />
                     <TypeAnimation
                         sequence={[
-                        'Naman',
+                        'Naman Chauhan',
                         1000,
                         'techmirtz',
                         1000,
