@@ -24,7 +24,7 @@ export const HeroSection = () => {
                         1000,
                         'IoT Developer',
                         1000,
-                        'RPA Architext',
+                        'RPA Architect',
                         1000
                         ]}
                         wrapper="span"
