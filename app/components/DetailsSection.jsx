@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useTransition } from 'react';
-import Image from 'next/image';
 import TabButton from './TabButton';
 
 const TAB_DATA = [
@@ -8,7 +7,15 @@ const TAB_DATA = [
         title: "Skills",
         id: "skills",
         content: (
-            "Python 3.x, RPA, Node.js, Flask, Django, React, IoT & Microcontrollers"
+            <ul>
+                <li>Python 3.x</li>
+                <li>RPA</li>
+                <li>Node.js</li>
+                <li>Flask</li>
+                <li>Django</li>
+                <li>React</li>
+                <li>IoT & Microcontrollers</li>
+            </ul>
         ),
     },
     {
@@ -42,7 +49,7 @@ const TAB_DATA = [
     }
 ];
 
-const AboutSection = () => {
+const DetailsSection = () => {
     const [tab, setTab] = useState("skills");
     const [isPending, startTransition] = useTransition();
 
@@ -54,20 +61,12 @@ const AboutSection = () => {
 
     return (
         <section>
-            <div className='mt-10 md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
-                <Image className='rounded-2xl' src="/images/about-image1.png" width={500} height={500} alt='about-image'/>
-                <div className='mt-6 md:mt-0 text-left flex flex-col h-full'>
-                    <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
-                    <p className='text-base lg:text-lg'>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium laboriosam consequatur itaque, 
-                        cum impedit, iusto aut illum velit, mollitia a aliquam sapiente ab. Quasi suscipit aliquid, 
-                        velit nisi sit deserunt!
-                        Possimus soluta neque nostrum cupiditate tempore. Facilis repudiandae nesciunt voluptate dolore 
-                        dicta pariatur cumque consequuntur totam magnam doloribus exercitationem reprehenderit a illo, 
-                        quas asperiores ut id! Error sed sunt beatae.
-                    </p>
-                    <div className="flex flex-row mt-8">
-                        <TabButton 
+            <div className="grid grid-cols-10">
+                <div className="col-span-6 place-self-center text-center border-r border-purple-500 w-full">
+                    {TAB_DATA.find((t) => t.id === tab).content}
+                </div>
+                <div className="col-span-4 place-self-center text-center flex flex-col">
+                <TabButton 
                             selectTab={() => handleTabChange("skills")}
                             active={tab === "skills"}
                         >
@@ -95,14 +94,10 @@ const AboutSection = () => {
                             {" "}
                             Work{" "}
                         </TabButton>
-                    </div>
-                    <div className="mt-8 ">
-                        {TAB_DATA.find((t) => t.id === tab).content}
-                    </div>
                 </div>
             </div>
         </section>
     );
 };
 
-export default AboutSection;
+export default DetailsSection;

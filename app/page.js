@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import HeroSection from './components/HeroSection'
 import NavBar from './components/NavBar';
 import AboutSection from './components/AboutSection';
+// import DetailsSection from './components/DetailsSection';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <div className="container mt-32 mx-auto px-12 py-12">
         <HeroSection />
         <AboutSection />
+        {/* <DetailsSection /> */}
       </div>
       <Analytics />
     </main>
