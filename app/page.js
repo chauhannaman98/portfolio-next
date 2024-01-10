@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import HeroSection from './components/HeroSection'
 import NavBar from './components/NavBar';
 import AboutSection from './components/AboutSection';
@@ -20,6 +21,7 @@ export default function Home() {
       </div>
       <Footer />
       <Analytics />
+      <SpeedInsights />
     </main>
   );
 };
