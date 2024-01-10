@@ -22,10 +22,12 @@ export const HeroSection = () => {
                         1500,
                         'Web Developer',
                         1500,
+                        'Python Programmer',
+                        1500,
                         'IoT Developer',
                         1500,
                         'RPA Architect',
-                        1500
+                        1500,
                         ]}
                         wrapper="span"
                         speed={50}
