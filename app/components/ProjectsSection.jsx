@@ -32,6 +32,15 @@ const projectsData = [
         gitUrl: "https://github.com/chauhannaman98/Thala_for_a_reason/",
         previewUrl: "https://thala.techmirtz.com/",
     },
+    {
+      id: 4,
+      title: "Giphy Search Engine",
+      description: "Based on AJAX, a search engine to find you favorite gifs",
+      image: "/images/projects/giphy-search-engine.png",
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/chauhannaman98/gif-search-engine",
+      previewUrl: "https://giphy.techmirtz.com/",
+  },
 ];
 
 const ProjectsSection = () => {
