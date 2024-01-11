@@ -59,12 +59,10 @@ const AboutSection = () => {
                 <div className='mt-6 md:mt-0 text-left flex flex-col h-full'>
                     <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
                     <p className='text-base lg:text-lg'>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium laboriosam consequatur itaque, 
-                        cum impedit, iusto aut illum velit, mollitia a aliquam sapiente ab. Quasi suscipit aliquid, 
-                        velit nisi sit deserunt!
-                        Possimus soluta neque nostrum cupiditate tempore. Facilis repudiandae nesciunt voluptate dolore 
-                        dicta pariatur cumque consequuntur totam magnam doloribus exercitationem reprehenderit a illo, 
-                        quas asperiores ut id! Error sed sunt beatae.
+                        Born in 1998, I graduated from SRM Institute of Sciene and Technology in 2021 and began career as a Python
+                        and RPA Developer. I collaborate with open source code on GitHub. I contribute codes to
+                        IoT, Web Development(React, Django), embedded systems, Flask, etc. When away from my laptop screen, I love to listen to music, 
+                        reading non-fiction books and travelling.
                     </p>
                     <div className="flex flex-row mt-8">
                         <TabButton 
