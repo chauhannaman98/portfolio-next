@@ -5,6 +5,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const EmailSection = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = {
+        email: e.target.email.value,
+        subject: e.target.subject.value,
+        message: e.target.message.value,
+    };
+
+    const JSONData = JSON.stringify(data);
+    const endpoint = "api/email/";
+    
+  };
+    
   return (
     <section className='lg:mx-12 grid md:grid-cols-2 my-2 md:my-12 py-24 gap-4 relative'>
         <div className='bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-purple-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2'></div>
