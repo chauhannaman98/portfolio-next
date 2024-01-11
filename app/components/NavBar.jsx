@@ -25,7 +25,7 @@ export const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100'>
+    <nav className='fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100 backdrop-blur-sm bg-[#121212]/90'>
         <div className='flex flex-wrap items-center justify-between mx-auto px-8 py-5'>
             <div className='border border-slate-200 rounded-full'>
               <a href={"/"}><Image src="/images/LOGO.gif" alt="Logo" width={50} height={50}/></a>
