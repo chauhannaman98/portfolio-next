@@ -53,7 +53,7 @@ const AboutSection = () => {
     };
 
     return (
-        <section>
+        <section id="about">
             <div className='mt-10 md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
                 <Image className='rounded-2xl' src="/images/about-image1.png" width={500} height={500} alt='about-image'/>
                 <div className='mt-6 md:mt-0 text-left flex flex-col h-full'>
