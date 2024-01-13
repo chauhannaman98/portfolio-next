@@ -117,32 +117,6 @@ const DetailsSection = () => {
                     ))}
                 </ul>
             </div>
-
-            {/* <h2 className='font-bold text-4xl mb-32 mt- w-full text-center'>
-                Education
-            </h2>
-
-            <div ref={ref} className='lg:w-[75%] sm:w-full mx-auto relative'>
-
-                <motion.div 
-                    style={{scaleY: scrollYProgress, boxShadow: "0px 0px 0.8rem 0.05rem #A855F7"}}
-                    className='absolute left-9 top-0 w-[4px] h-full bg-purple-500 drop-shadow-lg shadow-purple-500/50 origin-top rounded'
-                />
-
-                <ul className='w-full flex flex-col items-start justify-between ml-4'>
-                    {WORK_EXP.map((work, index) => (
-                        <Details
-                            key={work.id}
-                            time={work.time}
-                            company={work.company}
-                            companyLink={work.companyLink}
-                            address={work.address}
-                            position={work.position}
-                            work={work.workDetail}
-                        />
-                    ))}
-                </ul>
-            </div> */}
         </div>
   );
 };
