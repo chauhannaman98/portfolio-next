@@ -1,103 +1,124 @@
 "use client";
-import React, { useState, useTransition } from 'react';
-import TabButton from './TabButton';
+import React, { useRef } from 'react';
+import { motion, useScroll } from "framer-motion";
+import LiIcons from './LiIcons';
 
-const TAB_DATA = [
+const WORK_EXP = [
     {
-        title: "Skills",
-        id: "skills",
-        content: (
-            <ul>
-                <li>Python 3.x</li>
-                <li>RPA</li>
-                <li>Node.js</li>
-                <li>Flask</li>
-                <li>Django</li>
-                <li>React</li>
-                <li>IoT & Microcontrollers</li>
-            </ul>
-        ),
+        id: 1,
+        position: 'System Engineer',
+        time: "2021 - present",
+        company: 'Tata Consultancy Services Ltd',
+        companyLink: "https://www.tcs.com",
+        address: "Gurugram",
+        workDetail: "Working as RPA and Python programmer and deployed use cases including automation bots for SAP APO CCR and ECC activities. Also,\
+        developed NLP-based ticket traiging solution using Python along with the team for reducing the manual ticket traiging efforts.",
     },
     {
-        title: "Education",
-        id: "education",
-        content: (
-            <ul className='list-disc pl-2'>
-                <li>B.Tech(CSE), 2021 | SRM Institute of Technology</li>
-                <li>SSC, 2017 | Jodhamal Public School, Jammu</li>
-            </ul>
-        )
+        id: 2,
+        position: 'Intern',
+        time: "2020",
+        company: 'Kaartha Labz',
+        companyLink: "",
+        address: "Chennai",
+        workDetail: "Developed the solution for ESP8266 microcontroller to write and read data in internal EEPROM to communicate with the APIs for for automation in homes and industries.",
     },
     {
-        title: "Certifications",
-        id: "certifications",
-        content: (
-            <ul className='list-disc pl-2'>
-                <li>HackerRank Python</li>
-                <li>AWS Developer: OTP-AWSD1</li>
-            </ul>
-        )
+        id: 3,
+        position: 'Intern',
+        time: "2019",
+        company: 'Sparks Foundation',
+        companyLink: "https://www.thesparksfoundationsingapore.org/",
+        address: "Remote",
+        workDetail: "Worked as an Intern working on Django full-stack framework. Developed a credit management and transfer system with admin panel and backend. Used Bootstrap for frontend and PostgreSQL for DB."
     },
-    {
-        title: "Work",
-        id: "work",
-        content: (
-            <ul className='list-disc pl-2'>
-                <li>2021 - present | TCS as System Engineer</li>
-            </ul>
-        )
-    }
 ];
 
-const DetailsSection = () => {
-    const [tab, setTab] = useState("skills");
-    const [isPending, startTransition] = useTransition();
+const EDUCATION = [
+    {
+        id: 1,
+        institution: "SRM Institute of Science and Technology",
+        address: "Chennai",
+        time: "2017 - 2021",
+        marks: "83.34%",
+        qualification: "B. Tech.",
+        dept: "Computer Science and Engineering",
+    },
+    {
+        id: 2,
+        institution: "Jodhamal Public School",
+        address: "Jammu",
+        time: "2016-2017",
+        marks: "84%",
+        qualification: "SSC (10+2)",
+        dept: "Non-Medical Science",
+    },
+];
 
-    const handleTabChange = (id) => {
-        startTransition(() => {
-            setTab(id);
-        });
-    };
+const Details = ({ position, company, companyLink, time, address, work }) => {
+    return (
+        <li className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
+            <LiIcons />
+            <motion.div
+                initial={{ y: 50 }}
+                whileInView={{ y: 0 }}
+                transition={{ duration: 0.5, type: 'spring' }}
+            >
+                <h3 className='capitalize font-bold text-2xl'>
+                    {position}&nbsp;
+                    <a 
+                        href={companyLink} 
+                        target='_blank'
+                        className='text-pink-800 capitalize'
+                    >@{company}</a>
+                </h3>
+                <span className='capitalize font-medium text-slate-600'>
+                    {time} | {address}
+                </span>
+                <p className='font-medium w-full'>
+                    {work}
+                </p>
+            </motion.div>
+        </li>
+    );
+};
+
+const DetailsSection = () => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start 0.8", "end 0.8"],
+    });
 
     return (
-        <section>
-            <div className="grid grid-cols-10">
-                <div className="col-span-6 place-self-center text-center border-r border-purple-500 w-full">
-                    {TAB_DATA.find((t) => t.id === tab).content}
-                </div>
-                <div className="col-span-4 place-self-center text-center flex flex-col">
-                <TabButton 
-                            selectTab={() => handleTabChange("skills")}
-                            active={tab === "skills"}
-                        >
-                            {" "}
-                            Skills{" "}
-                        </TabButton>
-                        <TabButton 
-                            selectTab={() => handleTabChange("education")}
-                            active={tab === "education"}
-                        >
-                            {" "}
-                            Education{" "}
-                        </TabButton>
-                        <TabButton 
-                            selectTab={() => handleTabChange("certifications")}
-                            active={tab === "certifications"}
-                        >
-                            {" "}
-                            Certifications{" "}
-                        </TabButton>
-                        <TabButton 
-                            selectTab={() => handleTabChange("work")}
-                            active={tab === "work"}
-                        >
-                            {" "}
-                            Work{" "}
-                        </TabButton>
-                </div>
+        <div className="my-64">
+            <h2 className='font-bold text-4xl mb-32 w-full text-center'>
+                Work Experience
+            </h2>
+
+            <div ref={ref} className='lg:w-[75%] sm:w-full mx-auto relative'>
+
+                <motion.div 
+                    style={{scaleY: scrollYProgress, boxShadow: "0px 0px 0.8rem 0.05rem #A855F7"}}
+                    className='absolute left-9 top-0 w-[4px] h-full bg-purple-500 drop-shadow-lg shadow-purple-500/50 origin-top rounded'
+                />
+
+                <ul className='w-full flex flex-col items-start justify-between ml-4'>
+                    {WORK_EXP.map((work, index) => (
+                        <Details
+                            key={work.id}
+                            time={work.time}
+                            company={work.company}
+                            companyLink={work.companyLink}
+                            address={work.address}
+                            position={work.position}
+                            work={work.workDetail}
+                        />
+                    ))}
+                </ul>
             </div>
-        </section>
-    );
+        </div>
+  );
 };
 
 export default DetailsSection;
