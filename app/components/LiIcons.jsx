@@ -2,16 +2,15 @@ import { useRef } from 'react';
 import React from 'react';
 import { motion, useScroll } from 'framer-motion';
 
-const LiIcons = ({ reference }) => {
-
+const LiIcons = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
-        target: reference,
-        offset: ["center end", "center center"],
+        target: ref,
+        offset: ["start 0.8", "end 0.8"],
     });
 
     return (
-        <figure className='absolute left-0 stroke-white'>
+        <figure ref={ref} className='absolute left-0 stroke-white'>
             <svg className='-rotate-90' width="75" height="75" viewBox="0 0 100 100">
                 <circle cx="75" cy="50" r="20" className='stroke-purple-500 stroke-3 fill-none' />
                 <motion.circle cx="75" cy="50" r="20" className='stroke-white stroke-[5px] fill-[#121212]' 
