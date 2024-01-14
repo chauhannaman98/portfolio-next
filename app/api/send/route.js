@@ -2,7 +2,7 @@
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
+const fromEmail = "onboarding@resend.dev";
 const adminEmail = process.env.ADMIN_EMAIL;
 
 export async function POST(req, res) {
