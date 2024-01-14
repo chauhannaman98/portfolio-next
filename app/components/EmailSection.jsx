@@ -4,6 +4,8 @@ import GithubIcon from "../../public/github-icon.svg";
 import LinkedInIcon from "../../public/linkedin-icon.svg";
 import Link from 'next/link';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const EmailSection = () => {
     const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -31,13 +33,25 @@ const EmailSection = () => {
         body: JSONData,
     };
 
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.setAttribute('class','bg-purple-300 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full')
+    const spinner = document.getElementById('spinner');
+    spinner.style.visibility = 'inherit';
+
     const response = await fetch(endpoint, options);
     const resData = await response.json();
 
     if (response.status === 200)   {
-        console.log("message sent");
         setEmailSubmitted(true);
+        }
+    else {
+        setEmailSubmitted(false);
     }
+
+    document.querySelector('.responseBanner').style.visibility = 'inherit';
+    
+    spinner.style.visibility = 'hidden';
+    submitBtn.setAttribute('class','bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full')
 };
     
   return (
@@ -61,7 +75,7 @@ const EmailSection = () => {
             </div>
         </div>
         <div className='z-10 lg:z-0 md:z-10'>
-            <form className='flex flex-col' onSubmit={handleSubmit}>
+            <form id='contactForm' className='flex flex-col' onSubmit={handleSubmit}>
                 <div className='mb-6'>
                     <label
                         htmlFor='email'
@@ -106,19 +120,34 @@ const EmailSection = () => {
                         required
                         placeholder="Let's talk about..."/>
                 </div>
-                <button 
-                    type='submit'
-                    className='bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'
-                >
-                    Send message
-                </button>
-                {
-                    emailSubmitted && (
-                        <p className='text-green-500 text-sm mt-2'>
-                            Email sent successfully!
-                        </p>
-                    )
-                }
+                <div className="relative">
+                    <button
+                        type='submit'
+                        id='submitBtn'
+                        className='bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'
+                    >
+                        Send message
+                    </button>
+                    <div id='spinner' style={{visibility: 'hidden'}} className='absolute top-0 left-0 w-full h-full z-0 flex flex-col justify-center'>
+                        <FontAwesomeIcon 
+                            className='animate-spin'
+                            icon={faSpinner} 
+                            size='xl'
+                            style={{color: "#121212",}} />
+                    </div>
+                </div>
+                <div style={{visibility: 'hidden'}} className="responseBanner">
+                    {
+                        emailSubmitted
+                            ?   <p className='text-green-500 text-sm mt-2'>
+                                    Email sent successfully!
+                                </p>
+                            :   <p className='text-red-500 text-sm mt-2'>
+                                    Email delivery failed!
+                                    Sorry for inconvenience. Please send an email manually to <a className='underline' href='mailto: chauhannaman98@gmail.com'>chauhannaman98@gmail.com</a>
+                                </p>
+                    }
+                </div>
             </form>
         </div>
     </section>
