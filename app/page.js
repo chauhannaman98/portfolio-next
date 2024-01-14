@@ -1,12 +1,12 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import HeroSection from './components/HeroSection'
-import NavBar from './components/NavBar';
-import AboutSection from './components/AboutSection';
-import DetailsSection from './components/DetailsSection';
-import ProjectsSection from './components/ProjectsSection';
+import HeroSection from './components/HeroSection/HeroSection'
+import NavBar from './components/NavBar/NavBar';
+import AboutSection from './components/AboutSection/AboutSection';
+import DetailsSection from './components/AboutSection/DetailsSection';
+import ProjectsSection from './components/ProjectSection/ProjectsSection';
 import EmailSection from './components/EmailSection';
-import AchievementsSection from './components/AchievementsSection';
+import AchievementsSection from './components/AboutSection/AchievementsSection';
 import Footer from './components/Footer';
 
 export default function Home() {
