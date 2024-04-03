@@ -40,7 +40,16 @@ const projectsData = [
       tag: ["All", "Web"],
       gitUrl: "https://github.com/chauhannaman98/gif-search-engine",
       previewUrl: "https://giphy.techmirtz.com/",
-  },
+    },
+    {
+      id: 5,
+      title: "Ramcharitmanas API",
+      description: "Build on FastAPI, an API for all chapter and verses of Ramcharitmanas [Under development]",
+      image: "/images/projects/manas-api.png",
+      tag: ["All", "Python"],
+      gitUrl: "https://github.com/chauhannaman98/ramcharitmanas-api",
+      previewUrl: "https://manasapi.techmirtz.com/docs",
+    },
 ];
 
 const ProjectsSection = () => {
