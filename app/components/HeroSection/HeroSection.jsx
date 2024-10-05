@@ -61,7 +61,7 @@ export const HeroSection = () => {
                                 Hire Me
                             </a>
                         </button>
-                        <Link href={'https://balibwxbtfqwbctuxbxp.supabase.co/storage/v1/object/sign/Docs/portfolio/Resume.pdf?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJEb2NzL3BvcnRmb2xpby9SZXN1bWUucGRmIiwiaWF0IjoxNzE2OTAyMTk4LCJleHAiOjQ4Mzg5NjYxOTh9.YiJxq_RNQo7Tr4lL5NfVZWZvKhAtiQtSg2sETjjdQ8g&t=2024-05-28T13%3A16%3A38.487Z'} target='_blank'>
+                        <Link href={process.env.NEXT_PUBLIC_RESUME_URL} target='_blank'>
                             <button className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-transparent hover:bg-slate-800'>
                                 <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">Download CV</span>
                             </button>
