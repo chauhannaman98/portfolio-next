@@ -2,6 +2,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/data";
 import { SITE_URL } from "@/lib/seo";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -152,12 +153,15 @@ function JsonLd() {
 }
 
 export default function RootLayout({ children }) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
+        <GoogleAnalytics gaId={GA_ID} />
         <JsonLd />
       </body>
     </html>
