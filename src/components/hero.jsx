@@ -99,7 +99,7 @@ function TerminalCard() {
       <div className="absolute -right-4 -top-5 hidden animate-float rounded-xl border border-white/10 bg-zinc-900/90 px-4 py-2.5 shadow-xl backdrop-blur sm:block">
         <p className="font-mono text-xs text-zinc-400">based in</p>
         <p className="flex items-center gap-1.5 text-sm font-medium text-zinc-200">
-          <MapPin className="h-3.5 w-3.5 text-emerald-400" /> Noida, India
+          <MapPin className="h-3.5 w-3.5 text-emerald-400" /> {process.env.NEXT_PUBLIC_BASED_IN}
         </p>
       </div>
     </motion.div>

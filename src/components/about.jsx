@@ -67,7 +67,7 @@ export default function About() {
                   currently
                 </p>
                 <p className="text-sm font-medium text-zinc-200">
-                  System Engineer @ TCS
+                  {process.env.NEXT_PUBLIC_CURRENT_WORKING}
                 </p>
               </div>
             </div>
