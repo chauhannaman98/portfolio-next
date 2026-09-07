@@ -12,7 +12,8 @@ import {
 } from "lucide-react";
 import SectionHeading from "./section-heading";
 import Reveal from "./reveal";
-import { certifications, achievements } from "@/lib/data";
+import { certifications } from "@/lib/data";
+import { achievements } from "@/data/achievements";
 
 const certIcons = { BadgeCheck, Award, Puzzle, Medal, GraduationCap };
 
