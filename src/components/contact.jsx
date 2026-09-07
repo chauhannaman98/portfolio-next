@@ -5,7 +5,7 @@ import { Loader2, Send, CheckCircle2, AlertTriangle, Mail } from "lucide-react";
 import SectionHeading from "./section-heading";
 import Reveal from "./reveal";
 import SocialIcons from "./social-icons";
-import { siteConfig } from "@/lib/data";
+import { siteConfig } from "@/data/siteConfig";
 
 const initialForm = { name: "", email: "", subject: "", message: "", company: "" };
 
@@ -81,7 +81,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-20 md:py-28">
       <div
-        className="glow-emerald absolute left-1/2 top-10 h-96 w-[560px] -translate-x-1/2"
+        className="glow-emerald absolute left-1/2 top-10 h-96 w-140 -translate-x-1/2"
         aria-hidden="true"
       />
 
@@ -103,7 +103,7 @@ export default function Contact() {
 
               <a
                 href={siteConfig.socials.mail}
-                className="card-lift mt-8 inline-flex w-fit items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-4"
+                className="card-lift mt-8 inline-flex w-fit items-center gap-3 rounded-xl border border-white/8 bg-white/3 px-5 py-4"
               >
                 <span className="grid h-10 w-10 place-items-center rounded-lg border border-emerald-400/20 bg-emerald-400/10 text-emerald-300">
                   <Mail className="h-5 w-5" aria-hidden="true" />
@@ -130,7 +130,7 @@ export default function Contact() {
           <Reveal delay={0.12}>
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 sm:p-8"
+              className="rounded-2xl border border-white/[0.07] bg-white/2 p-6 sm:p-8"
               noValidate={false}
             >
               <div className="grid gap-5 sm:grid-cols-2">
@@ -210,7 +210,7 @@ export default function Contact() {
               </div>
 
               {/* Honeypot — hidden from humans, catches naive bots */}
-              <div className="absolute -left-[9999px]" aria-hidden="true">
+              <div className="absolute left-[-9999px]" aria-hidden="true">
                 <label htmlFor="company">Company</label>
                 <input
                   id="company"
@@ -226,7 +226,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 px-6 py-3.5 text-sm font-semibold text-zinc-950 shadow-[0_10px_36px_-10px_rgba(16,185,129,0.55)] transition-all duration-300 hover:shadow-[0_14px_44px_-10px_rgba(16,185,129,0.7)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-linear-to-r from-emerald-400 to-teal-500 px-6 py-3.5 text-sm font-semibold text-zinc-950 shadow-[0_10px_36px_-10px_rgba(16,185,129,0.55)] transition-all duration-300 hover:shadow-[0_14px_44px_-10px_rgba(16,185,129,0.7)] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
                 {status === "sending" ? (
                   <>

@@ -1,7 +1,7 @@
 import { Code2, Layers, Bot, Cpu, Database } from "lucide-react";
 import Reveal from "./reveal";
 import SectionHeading from "./section-heading";
-import { skillGroups } from "@/lib/data";
+import { skillGroups } from "@/data/skillGroups";
 
 const iconMap = { Code2, Layers, Bot, Cpu, Database };
 
@@ -30,7 +30,7 @@ export default function Skills() {
                 delay={0.06 * i}
                 className={i === 0 ? "sm:col-span-2 lg:col-span-1" : ""}
               >
-                <div className="card-lift h-full rounded-xl border border-white/[0.07] bg-white/[0.03] p-6">
+                <div className="card-lift h-full rounded-xl border border-white/[0.07] bg-white/3 p-6">
                   <div className="flex items-center gap-3">
                     <span className="grid h-10 w-10 place-items-center rounded-lg border border-emerald-400/20 bg-emerald-400/10 text-emerald-300">
                       <Icon className="h-5 w-5" aria-hidden="true" />
@@ -43,7 +43,7 @@ export default function Skills() {
                     {group.skills.map((skill) => (
                       <li
                         key={skill}
-                        className="rounded-lg border border-white/[0.08] bg-zinc-900/60 px-3 py-1.5 text-sm text-zinc-300 transition-colors duration-200 hover:border-emerald-400/35 hover:text-emerald-200"
+                        className="rounded-lg border border-white/8 bg-zinc-900/60 px-3 py-1.5 text-sm text-zinc-300 transition-colors duration-200 hover:border-emerald-400/35 hover:text-emerald-200"
                       >
                         {skill}
                       </li>

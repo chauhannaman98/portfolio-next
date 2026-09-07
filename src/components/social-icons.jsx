@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Code2 } from "lucide-react";
-import { siteConfig } from "@/lib/data";
+import { siteConfig } from "@/data/siteConfig";
 
 const items = [
   { label: "GitHub", href: siteConfig.socials.github, Icon: Github },
@@ -21,7 +21,7 @@ export default function SocialIcons({ className = "", iconClassName = "" }) {
             title={label}
             className={`grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/5 text-zinc-400 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/40 hover:text-emerald-300 hover:shadow-[0_8px_24px_-8px_rgba(16,185,129,0.35)] ${iconClassName}`}
           >
-            <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+            <Icon className="h-4.5 w-4.5" aria-hidden="true" />
           </a>
         </li>
       ))}

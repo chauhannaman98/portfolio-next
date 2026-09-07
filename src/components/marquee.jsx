@@ -5,7 +5,7 @@ export default function Marquee() {
 
   return (
     <div
-      className="marquee-mask relative border-y border-white/[0.06] bg-white/[0.02] py-4"
+      className="marquee-mask relative border-y border-white/6 bg-white/2 py-4"
       aria-hidden="true"
     >
       <div className="flex w-max animate-marquee gap-10 whitespace-nowrap">

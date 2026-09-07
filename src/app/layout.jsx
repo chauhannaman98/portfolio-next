@@ -1,6 +1,6 @@
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { siteConfig } from "@/lib/data";
+import { siteConfig } from "@/data/siteConfig";
 import { SITE_URL } from "@/lib/seo";
 import { GoogleAnalytics } from '@next/third-parties/google';
 

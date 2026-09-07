@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Download, MapPin } from "lucide-react";
-import { siteConfig, roles, stats } from "@/lib/data";
+import { roles, stats } from "@/lib/data";
+import { siteConfig } from "@/data/siteConfig";
 import SocialIcons from "./social-icons";
 
 function useTypewriter(words, typeSpeed = 85, deleteSpeed = 42, pause = 1700) {
@@ -56,11 +57,11 @@ function TerminalCard() {
       className="relative w-full max-w-md"
     >
       <div
-        className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-emerald-500/15 via-teal-500/10 to-transparent blur-2xl"
+        className="absolute -inset-6 rounded-3xl bg-linear-to-br from-emerald-500/15 via-teal-500/10 to-transparent blur-2xl"
         aria-hidden="true"
       />
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/80 shadow-2xl shadow-black/50 backdrop-blur">
-        <div className="flex items-center gap-2 border-b border-white/[0.06] px-4 py-3">
+        <div className="flex items-center gap-2 border-b border-white/6 px-4 py-3">
           <span className="h-3 w-3 rounded-full bg-red-500/80" />
           <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
           <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
@@ -98,7 +99,7 @@ function TerminalCard() {
       <div className="absolute -right-4 -top-5 hidden animate-float rounded-xl border border-white/10 bg-zinc-900/90 px-4 py-2.5 shadow-xl backdrop-blur sm:block">
         <p className="font-mono text-xs text-zinc-400">based in</p>
         <p className="flex items-center gap-1.5 text-sm font-medium text-zinc-200">
-          <MapPin className="h-3.5 w-3.5 text-emerald-400" /> Gurugram, India
+          <MapPin className="h-3.5 w-3.5 text-emerald-400" /> Noida, India
         </p>
       </div>
     </motion.div>
@@ -115,7 +116,7 @@ export default function Hero() {
     >
       <div className="dot-grid absolute inset-0" aria-hidden="true" />
       <div
-        className="glow-emerald absolute -top-40 left-1/2 h-[480px] w-[720px] -translate-x-1/2"
+        className="glow-emerald absolute -top-40 left-1/2 h-120 w-180 -translate-x-1/2"
         aria-hidden="true"
       />
       <div
@@ -130,7 +131,7 @@ export default function Hero() {
           transition={{ staggerChildren: 0.12 }}
         >
           <motion.div variants={fadeUp}>
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/25 bg-emerald-400/[0.08] px-4 py-1.5 text-xs font-medium text-emerald-300">
+            <span className="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/25 bg-emerald-400/8 px-4 py-1.5 text-xs font-medium text-emerald-300">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse-dot" />
               {siteConfig.availability}
             </span>
@@ -156,7 +157,7 @@ export default function Hero() {
             className="mt-4 font-display text-2xl font-semibold text-zinc-400 sm:text-3xl"
           >
             I am a <span className="text-zinc-100">{typed}</span>
-            <span className="ml-0.5 inline-block h-7 w-[3px] translate-y-1 bg-emerald-400 animate-blink md:h-8" />
+            <span className="ml-0.5 inline-block h-7 w-0.75 translate-y-1 bg-emerald-400 animate-blink md:h-8" />
           </motion.p>
 
           <motion.p
@@ -173,7 +174,7 @@ export default function Hero() {
           <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-[0_10px_36px_-10px_rgba(16,185,129,0.55)] transition-all duration-300 hover:shadow-[0_14px_44px_-10px_rgba(16,185,129,0.7)]"
+              className="group inline-flex items-center gap-2 rounded-lg bg-linear-to-r from-emerald-400 to-teal-500 px-6 py-3 text-sm font-semibold text-zinc-950 shadow-[0_10px_36px_-10px_rgba(16,185,129,0.55)] transition-all duration-300 hover:shadow-[0_14px_44px_-10px_rgba(16,185,129,0.7)]"
             >
               Check out my work
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -207,7 +208,7 @@ export default function Hero() {
           <motion.li
             key={s.label}
             variants={fadeUp}
-            className="card-lift rounded-xl border border-white/[0.07] bg-white/[0.03] p-4 text-center md:p-5"
+            className="card-lift rounded-xl border border-white/[0.07] bg-white/3 p-4 text-center md:p-5"
           >
             <p className="font-display text-3xl font-bold text-gradient md:text-4xl">
               {s.value}

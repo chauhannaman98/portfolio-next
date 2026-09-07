@@ -3,7 +3,8 @@ import profileImg from "../../public/profile.jpg";
 import { GraduationCap, Briefcase, GitBranch, Heart } from "lucide-react";
 import Reveal from "./reveal";
 import SectionHeading from "./section-heading";
-import { aboutFacts, siteConfig } from "@/lib/data";
+import { siteConfig } from "@/data/siteConfig";
+import { aboutFacts } from "@/data/aboutFacts";
 
 const iconMap = {
   GraduationCap,
@@ -35,7 +36,7 @@ export default function About() {
                 className="glow-emerald absolute -inset-8"
                 aria-hidden="true"
               />
-              <div className="relative rounded-2xl bg-gradient-to-br from-emerald-400/40 via-white/10 to-teal-400/25 p-[1.5px] shadow-2xl shadow-black/40">
+              <div className="relative rounded-2xl bg-linear-to-br from-emerald-400/40 via-white/10 to-teal-400/25 p-[1.5px] shadow-2xl shadow-black/40">
                 <div className="relative aspect-square overflow-hidden rounded-2xl bg-zinc-900">
                   <Image
                     src={profileImg}
@@ -46,7 +47,7 @@ export default function About() {
                     className="object-cover"
                   />
                   <div
-                    className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-zinc-950/85 via-zinc-950/30 to-transparent"
+                    className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-zinc-950/85 via-zinc-950/30 to-transparent"
                     aria-hidden="true"
                   />
                   <div className="absolute bottom-4 left-5">
@@ -108,7 +109,7 @@ export default function About() {
                 const Icon = iconMap[fact.icon];
                 return (
                   <Reveal key={fact.title} delay={0.08 * i}>
-                    <div className="card-lift group h-full rounded-xl border border-white/[0.07] bg-white/[0.03] p-5">
+                    <div className="card-lift group h-full rounded-xl border border-white/[0.07] bg-white/3 p-5">
                       <span className="grid h-10 w-10 place-items-center rounded-lg border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 transition-transform duration-300 group-hover:scale-110">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </span>

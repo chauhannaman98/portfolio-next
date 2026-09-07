@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import SectionHeading from "./section-heading";
 import Reveal from "./reveal";
-import { articles } from "@/lib/data";
+import { articles } from "@/data/articles";
 
 const articleIcons = { Camera, Zap, Tv, Sun, BatteryCharging, TrendingUp, Newspaper };
 
@@ -37,13 +37,13 @@ export default function Articles() {
             const Icon = articleIcons[article.icon] || Newspaper;
             return (
               <Reveal key={article.title} delay={0.07 * i} className="h-full">
-                <article className="card-lift group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.03] p-6">
+                <article className="card-lift group relative flex h-full flex-col overflow-hidden rounded-xl border border-white/[0.07] bg-white/3 p-6">
                   <div
-                    className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-emerald-400/[0.09] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-emerald-400/9 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     aria-hidden="true"
                   />
                   <div className="flex items-start justify-between">
-                    <span className="grid h-11 w-11 place-items-center rounded-lg border border-emerald-400/20 bg-emerald-400/[0.08] text-emerald-300">
+                    <span className="grid h-11 w-11 place-items-center rounded-lg border border-emerald-400/20 bg-emerald-400/8 text-emerald-300">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <span className="font-mono text-xs text-zinc-500">
