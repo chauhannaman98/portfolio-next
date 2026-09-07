@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import SectionHeading from "./section-heading";
 import Reveal from "./reveal";
-import { projects, projectFilters } from "@/lib/data";
+import { projects, projectFilters } from "@/data/projects";
 
 const iconMap = {
   ShoppingBag,
@@ -63,11 +63,10 @@ export default function Projects() {
                   role="tab"
                   aria-selected={active}
                   onClick={() => setFilter(f)}
-                  className={`rounded-lg px-4 py-2 font-mono text-sm transition-all duration-300 ${
-                    active
-                      ? "border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 shadow-[0_0_20px_-6px_rgba(16,185,129,0.45)]"
-                      : "border border-white/[0.08] bg-white/[0.03] text-zinc-400 hover:border-white/20 hover:text-zinc-200"
-                  }`}
+                  className={`rounded-lg px-4 py-2 font-mono text-sm transition-all duration-300 ${active
+                    ? "border border-emerald-400/40 bg-emerald-400/10 text-emerald-300 shadow-[0_0_20px_-6px_rgba(16,185,129,0.45)]"
+                    : "border border-white/8 bg-white/3 text-zinc-400 hover:border-white/20 hover:text-zinc-200"
+                    }`}
                 >
                   <span className="text-emerald-400/70 mr-1.5">
                     {f === "All" ? "*" : "#"}
@@ -91,15 +90,15 @@ export default function Projects() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.94, y: 18 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="card-lift group relative flex flex-col overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.03] p-6"
+                  className="card-lift group relative flex flex-col overflow-hidden rounded-xl border border-white/[0.07] bg-white/3 p-6"
                 >
                   <div
-                    className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-emerald-400/[0.09] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-emerald-400/9 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     aria-hidden="true"
                   />
 
                   <div className="flex items-start justify-between">
-                    <span className="grid h-11 w-11 place-items-center rounded-lg border border-emerald-400/20 bg-emerald-400/[0.08] text-emerald-300">
+                    <span className="grid h-11 w-11 place-items-center rounded-lg border border-emerald-400/20 bg-emerald-400/8 text-emerald-300">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <a
@@ -131,7 +130,7 @@ export default function Projects() {
                     {project.tech.map((t) => (
                       <li
                         key={t}
-                        className="rounded-md bg-white/[0.05] px-2 py-0.5 font-mono text-[11px] text-zinc-400"
+                        className="rounded-md bg-white/5 px-2 py-0.5 font-mono text-[11px] text-zinc-400"
                       >
                         {t}
                       </li>

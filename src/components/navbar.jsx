@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { siteConfig, navLinks } from "@/lib/data";
+import { navLinks } from "@/lib/data";
+import { siteConfig } from "@/data/siteConfig";
 
 function Monogram() {
   return (
@@ -12,7 +13,7 @@ function Monogram() {
       className="group flex items-center gap-2.5"
       aria-label="Back to top"
     >
-      <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 font-mono text-sm font-bold text-zinc-950 shadow-[0_0_24px_-6px_rgba(16,185,129,0.6)] transition-transform duration-300 group-hover:rotate-6">
+      <span className="grid h-9 w-9 place-items-center rounded-lg bg-linear-to-br from-emerald-400 to-teal-500 font-mono text-sm font-bold text-zinc-950 shadow-[0_0_24px_-6px_rgba(16,185,129,0.6)] transition-transform duration-300 group-hover:rotate-6">
         tm
       </span>
       <span className="font-mono text-zinc-300 text-sm tracking-tight hidden lg:block">
@@ -46,17 +47,16 @@ export default function Navbar() {
   return (
     <>
       <motion.div
-        className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-emerald-400 via-teal-400 to-lime-300"
+        className="fixed inset-x-0 top-0 z-60 h-0.5 origin-left bg-linear-to-r from-emerald-400 via-teal-400 to-lime-300"
         style={{ scaleX: progress }}
         aria-hidden="true"
       />
 
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "border-b border-white/[0.06] bg-zinc-950/80 backdrop-blur-xl"
-            : "bg-transparent"
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled
+          ? "border-b border-white/6 bg-zinc-950/80 backdrop-blur-xl"
+          : "bg-transparent"
+          }`}
       >
         <nav
           className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8"
@@ -152,7 +152,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-emerald-400 to-teal-500 px-6 py-3 font-medium text-zinc-950"
+                  className="inline-flex items-center gap-2 rounded-lg bg-linear-to-r from-emerald-400 to-teal-500 px-6 py-3 font-medium text-zinc-950"
                 >
                   Hire Me <ArrowUpRight className="h-4 w-4" />
                 </a>

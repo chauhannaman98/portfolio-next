@@ -21,8 +21,8 @@ function BackToTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Back to top"
       className={`fixed bottom-6 right-6 z-40 grid h-11 w-11 place-items-center rounded-xl border border-emerald-400/30 bg-zinc-900/90 text-emerald-300 shadow-lg shadow-black/40 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/60 ${visible
-          ? "translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-4 opacity-0"
+        ? "translate-y-0 opacity-100"
+        : "pointer-events-none translate-y-4 opacity-0"
         }`}
     >
       <ArrowUp className="h-5 w-5" />
@@ -34,7 +34,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-white/[0.06] bg-black/30">
+    <footer className="mt-auto border-t border-white/6 bg-black/30">
       <BackToTop />
 
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8">
@@ -45,7 +45,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2.5"
               aria-label="Back to top"
             >
-              <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 font-mono text-sm font-bold text-zinc-950">
+              <span className="grid h-9 w-9 place-items-center rounded-lg bg-linear-to-br from-emerald-400 to-teal-500 font-mono text-sm font-bold text-zinc-950">
                 tm
               </span>
               <span className="font-display text-lg font-semibold text-zinc-200">
@@ -76,7 +76,7 @@ export default function Footer() {
           <SocialIcons />
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/[0.06] pt-6 text-xs text-zinc-600 sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/6 pt-6 text-xs text-zinc-600 sm:flex-row sm:items-center">
           <p>
             © {year} Naman Chauhan. All rights reserved.
           </p>

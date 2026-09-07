@@ -5,7 +5,7 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { Briefcase, MapPin, ChevronRight } from "lucide-react";
 import Reveal from "./reveal";
 import SectionHeading from "./section-heading";
-import { experience } from "@/lib/data";
+import { experience } from "@/data/experience";
 
 export default function Experience() {
   const timelineRef = useRef(null);
@@ -44,27 +44,27 @@ export default function Experience() {
           <motion.span
             aria-hidden="true"
             style={{ scaleY }}
-            className="timeline-fill absolute left-0 top-0 h-full w-[2px] origin-top rounded-full"
+            className="timeline-fill absolute left-0 top-0 h-full w-0.5 origin-top rounded-full"
           />
           {/* Glowing bead riding the tip */}
           <motion.span
             aria-hidden="true"
             style={{ top: headTop, opacity: headOpacity }}
-            className="absolute left-0 h-3 w-3 -translate-x-[5px] rounded-full bg-emerald-300 shadow-[0_0_16px_4px_rgba(52,211,153,0.55)]"
+            className="absolute left-0 h-3 w-3 -translate-x-1.25 rounded-full bg-emerald-300 shadow-[0_0_16px_4px_rgba(52,211,153,0.55)]"
           />
 
           <ol className="space-y-10 pl-8 md:pl-12">
             {experience.map((job, i) => (
               <li key={job.company} className="relative">
                 <span
-                  className="absolute -left-[41px] top-1 grid h-[22px] w-[22px] place-items-center rounded-full border border-emerald-400/40 bg-zinc-950 md:-left-[57px]"
+                  className="absolute -left-10.25 top-1 grid h-5.5 w-5.5 place-items-center rounded-full border border-emerald-400/40 bg-zinc-950 md:-left-14.25"
                   aria-hidden="true"
                 >
                   <span className="h-2 w-2 rounded-full bg-emerald-400" />
                 </span>
 
                 <Reveal delay={0.06 * i}>
-                  <div className="card-lift rounded-xl border border-white/[0.07] bg-white/[0.03] p-6 md:p-7">
+                  <div className="card-lift rounded-xl border border-white/[0.07] bg-white/3 p-6 md:p-7">
                     <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
                       <div>
                         <h3 className="font-display text-lg font-semibold text-zinc-100 md:text-xl">
@@ -94,7 +94,7 @@ export default function Experience() {
                           </span>
                         </p>
                       </div>
-                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-mono text-xs text-zinc-400">
+                      <span className="rounded-full border border-white/10 bg-white/4 px-3 py-1 font-mono text-xs text-zinc-400">
                         {job.period}
                       </span>
                     </div>
@@ -115,7 +115,7 @@ export default function Experience() {
                       {job.tech.map((t) => (
                         <li
                           key={t}
-                          className="rounded-md border border-emerald-400/[0.14] bg-emerald-400/[0.06] px-2.5 py-1 font-mono text-xs text-emerald-300/90"
+                          className="rounded-md border border-emerald-400/[0.14] bg-emerald-400/6 px-2.5 py-1 font-mono text-xs text-emerald-300/90"
                         >
                           {t}
                         </li>
